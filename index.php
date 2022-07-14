@@ -1,5 +1,8 @@
 <?php
-require_once("php/component.php");
+    require_once("php/component.php");
+    require_once("php/operation.php");
+
+    Createdb();
 ?>
 
 <!DOCTYPE html>
@@ -16,12 +19,12 @@ require_once("php/component.php");
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
     <main>
-
+        
         <div class="container text-center">
             <h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"> Book Store</i></h1>
             
@@ -55,7 +58,7 @@ require_once("php/component.php");
                     </div>
 
                     <!-- Buttons' container -->
-                    <div class="d-flex">
+                    <div class="d-flex justify-content-center">
                         <!-- Create Button -->
                         <?php 
                             buttonElement("btn-create", "btn btn-success", "<i class='fas fa-plus'></i>", "create", "dat-toggle='tooltip' data-placement='bottom' title='Create'"); 
@@ -79,6 +82,32 @@ require_once("php/component.php");
 
                 </form>
             </div>
+
+            <!-- Bootstrap table -->
+            <div class="d-flex table-data">
+                <table class="table table-striped table-dark">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Book Title</th>
+                            <th>Publisher</th>
+                            <th>Price</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbody">
+                        <tr>
+                            <td>1</td>
+                            <td>Book Title</td>
+                            <td>Daily Tuition</td>
+                            <td>44.99</td>
+                            <td><i class="fas fa-edit btnedit"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
 
     </main>
